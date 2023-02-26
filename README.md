@@ -3,7 +3,7 @@
 This assignment helps us assess your programming abilities. Your mission, should you choose to accept it, is to complete the assigned tasks below and return your completed files to us within one week. You must work alone and while some questions are allowed, please do try to finish as much as you can on your own (research is of course allowed). Remember this is our only visibility into your coding skills. We take this seriously.
 
 ## Setup Tasks
-✓ 1) Choose to work in Java, PHP, or Perl on the operating system of your choice.
+1) Choose to work in Java, PHP, or Perl on the operating system of your choice.
 2) If possible, please maintain the majority of your code and work on this assignment on a GitHub account (new one or existing one) and share with us at the end of the assignment.
 
 ## Coding Tasks
