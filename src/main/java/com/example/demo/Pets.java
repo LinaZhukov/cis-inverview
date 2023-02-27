@@ -36,10 +36,6 @@ public class Pets {
                 .collect(Collectors.toList());
     }
 
-    /*
-    * List the average age of the animals owned by each person,
-    * alphabetically by the person’s name.
-    * */
     public HashMap<String, List<Animal>> groupByOwner(){
         HashMap<String, List<Animal>> m = new HashMap<>();
 
@@ -57,6 +53,10 @@ public class Pets {
         return m;
     }
 
+    /*
+     * List the average age of the animals owned by each person,
+     * alphabetically by the person’s name.
+     * */
     public void ageByOwner(){
         HashMap<String, List<Animal>> owners = groupByOwner();
     }
