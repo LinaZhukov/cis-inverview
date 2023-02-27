@@ -1,6 +1,6 @@
-package com.example.demo;
+package com.example.db;
 
-import com.example.demo.db;
+import com.example.db.db;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
