@@ -6,12 +6,12 @@ import java.io.File;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class db {
     private List<Animal> data = new ArrayList<>();
+    private boolean connected = false;
 
-    void connect() {
+    public void connect() {
         try {
             File file = new File("D:\\dev\\demo\\src\\main\\java\\com\\example\\db\\animalownerlist.csv");
 
@@ -28,6 +28,7 @@ public class db {
             }
 
             stream.close();
+            connected = true;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -44,6 +45,10 @@ public class db {
     }
 
     public List<Animal> query() {
+        if(!this.connected){
+            this.connect();
+        }
+
         return data;
     }
 }

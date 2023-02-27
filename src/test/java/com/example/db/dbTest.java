@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class dbTest {
     db connection = new db();
-
     @Test
     void connect(){
         connection.connect();
@@ -30,7 +29,7 @@ class dbTest {
     void writeNegative() {
         connection.connect();
         assertEquals(11, connection.count());
-        connection.write(new String[]{"Tomathin", "Bear", "-5", "Lina",});
+        connection.write(new String[]{"Timathin", "Bear", "-5", "Lina",});
         assertEquals(11, connection.count());
     }
 

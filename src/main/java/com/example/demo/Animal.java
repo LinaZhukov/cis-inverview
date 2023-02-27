@@ -15,6 +15,6 @@ public class Animal {
 
     @Override
     public String toString() {
-        return this.AnimalName + " (" + this.Species + " - " + this.Age + ") : " + this.Owner;
+        return this.AnimalName + " (" + this.Species + " - " + this.Age + ")";
     }
 }
