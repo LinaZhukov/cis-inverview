@@ -6,9 +6,10 @@ import java.io.File;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class db {
-    List<Animal> data = new ArrayList<>();
+    private List<Animal> data = new ArrayList<>();
 
     void connect() {
         try {
@@ -37,11 +38,12 @@ public class db {
         return data.size();
     }
 
-    public Object write(Object data) {
-        return data;
+    public void write(String[] values) {
+        Animal i = new Animal(values);
+        data.add(i);
     }
 
-    public List<Animal> query(Object query) {
+    public List<Animal> query() {
         return data;
     }
 }

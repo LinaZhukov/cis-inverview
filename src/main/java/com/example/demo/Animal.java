@@ -3,13 +3,13 @@ package com.example.demo;
 public class Animal {
     String AnimalName;
     String Species;
-    String Age;
+    Integer Age;
     String Owner;
 
-    public Animal(String[] values){
+    public Animal(String[] values) {
         this.AnimalName = values[0];
         this.Species = values[1];
-        this.Age = values[2];
+        this.Age = Integer.parseInt(values[2]);
         this.Owner = values[3];
     }
 
