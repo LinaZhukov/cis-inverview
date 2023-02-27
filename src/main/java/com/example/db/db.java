@@ -15,6 +15,7 @@ public class db {
         try {
             File file = new File("D:\\dev\\demo\\src\\main\\java\\com\\example\\db\\animalownerlist.csv");
 
+            data = new ArrayList<>();
             Scanner stream = new Scanner(file);
 
             //skip the first line

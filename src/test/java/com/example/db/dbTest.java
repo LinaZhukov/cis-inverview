@@ -26,7 +26,7 @@ class dbTest {
     }
 
     @Test
-    void writeNegative() {
+    void dontWriteNegative() {
         connection.connect();
         assertEquals(11, connection.count());
         connection.write(new String[]{"Timathin", "Bear", "-5", "Lina",});
@@ -38,5 +38,14 @@ class dbTest {
         connection.connect();
         List<Animal> result = connection.query();
         assertEquals(11, result.size());
+    }
+
+    @Test
+    void dontResetConnection(){
+        connection.connect();
+        assertEquals(11, connection.count());
+        connection.write(new String[]{"Alf", "Alien", "285", "Lina",});
+        List<Animal> result = connection.query();
+        assertEquals(12, result.size());
     }
 }
