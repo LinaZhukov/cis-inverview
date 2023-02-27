@@ -1,7 +1,5 @@
 package com.example.demo;
 
-import com.example.db.Model;
-
 public class Animal {
     String AnimalName;
     String Species;
