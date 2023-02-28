@@ -58,7 +58,10 @@ public class Park {
     * I.e., list all the animals with age 1, then age 2, etc.
     * */
     public Map<Integer, List<Animal>> ageGroups(){
-        Map<Integer, List<Animal>> grouped = animals.query().stream().collect(groupingBy(Animal::Age));
+        Map<Integer, List<Animal>> grouped = animals.query()
+                .stream()
+                .collect(groupingBy(Animal::Age));
+
         return grouped;
     }
 }
