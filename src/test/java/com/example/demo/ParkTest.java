@@ -39,6 +39,8 @@ class ParkTest {
         for (String result : results) {
             System.out.println(result);
         }
+        String first = results[0].split("-")[0].trim();
+        assertEquals("Alice", first);
     }
 
     /*
