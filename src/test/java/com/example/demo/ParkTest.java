@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -30,6 +31,12 @@ class ParkTest {
         for (String result : results) {
             System.out.println(result);
         }
+    }
+
+    @Test
+    void ageGroups(){
+        Map<Integer, List<Animal>> results = park.ageGroups();
+        System.out.print(results);
     }
 
 }

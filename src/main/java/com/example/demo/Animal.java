@@ -33,4 +33,8 @@ public class Animal {
         }
         return true;
     }
+
+    public Integer Age() {
+        return this.Age;
+    }
 }

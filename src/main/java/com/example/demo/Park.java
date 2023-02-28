@@ -5,6 +5,8 @@ import com.example.db.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.groupingBy;
+
 public class Park {
     db animals = new db();
     HashMap<String, Owner> visitors = new HashMap<>();
@@ -55,7 +57,8 @@ public class Park {
     * List the animals by age.
     * I.e., list all the animals with age 1, then age 2, etc.
     * */
-    public String[] ageGroups(){
-
+    public Map<Integer, List<Animal>> ageGroups(){
+        Map<Integer, List<Animal>> grouped = animals.query().stream().collect(groupingBy(Animal::Age));
+        return grouped;
     }
 }
