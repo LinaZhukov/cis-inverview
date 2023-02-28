@@ -10,18 +10,26 @@ import static org.junit.jupiter.api.Assertions.*;
 class ParkTest {
     Park park = new Park();
 
-
+    @Test
+    void register(){
+        HashMap<String, Owner> groups = park.visitors;
+        assertEquals(3, groups.get("Bobby").pets.size());
+        System.out.print(groups);
+    }
 
     @Test
     void allPalindromes(){
         List<Animal> results = park.palindromes();
+        results.forEach(System.out::println);
         assertEquals(2, results.size());
     }
 
     @Test
-    void groupByOwner(){
-        HashMap<String, List<Animal>> groups = park.groupByOwner();
-        System.out.print(groups);
+    void ageByOwner(){
+        String[] results = park.ageByOwner();
+        for (String result : results) {
+            System.out.println(result);
+        }
     }
 
 }
