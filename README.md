@@ -26,9 +26,26 @@ Now that the data is in, it’s time to answer a few questions.  Please write me
 ## Data Tasks
 Again, it is not required that you set up a database connection for this assignment but please answer the following questions with generic SQL statements.
 1) Query the total number of animals
+```sql
+select count(*) from animals
+```
 2) Query the total number of owners
+```sql
+select distinct owner from animals
+```
 3) Query the number of Turtles
+```sql
+select count(*) 
+from animals
+where species == "turtle"
+```
 4) List all Cats, in order of ascending age
+```sql
+select *
+from animals
+where species == "cat"
+order by age asc;
+```
 
 ## Theory Questions
 1) Suppose we needed to add some extra fields to the animals depending on the species.  How might one go about this?
