@@ -50,4 +50,12 @@ public class Park {
 
         return updated;
     }
+
+    /*
+    * List the animals by age.
+    * I.e., list all the animals with age 1, then age 2, etc.
+    * */
+    public String[] ageGroups(){
+
+    }
 }

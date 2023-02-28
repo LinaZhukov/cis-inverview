@@ -49,10 +49,27 @@ order by age asc;
 
 ## Theory Questions
 1) Suppose we needed to add some extra fields to the animals depending on the species.  How might one go about this?
+```
+   We would add them to the pojo and update the db class to handle them during writes.
+   ```
 2) How would you go about handling animals or people with the same name?
+```
+We could add an id to both owners and pets and use that as pk instead of names
+ ```
 3) How would you approach this type of task working on a team of people?
+```
+Iterativly.
+```
 4) Data integrity is very important in a production environment.  What things can you do to ensure integrity?
+```
+We could add validation at the route level. 
+```
 5) Assume that this program becomes a web application accessible to anyone.  How might it be improved to handle the additional load it faces?
+```
+- replace csv with database
+- build indexes
+- optomize queries
+```
 
 
 
