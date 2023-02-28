@@ -7,9 +7,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Pets {
-    db connection = new db();
-    boolean isPalindrome(String _str) {
+public class Park {
+    db animals = new db();
+    HashMap<String, List<Animal>> visitors = new HashMap<>();
+
+    static boolean isPalindrome(String _str) {
         String str = _str.toLowerCase();
 
         int left = 0;
@@ -30,7 +32,7 @@ public class Pets {
     * Please list them in any order.
     * */
     public List<Animal> palindromes(){
-        return connection.query()
+        return animals.query()
                 .stream()
                 .filter(i -> isPalindrome(i.AnimalName))
                 .collect(Collectors.toList());
@@ -39,7 +41,7 @@ public class Pets {
     public HashMap<String, List<Animal>> groupByOwner(){
         HashMap<String, List<Animal>> m = new HashMap<>();
 
-        for(Animal i : connection.query()){
+        for(Animal i : animals.query()){
             if(!m.containsKey(i.Owner)){
                 List<Animal> animals = new ArrayList<>();
                 m.put(i.Owner, animals);
