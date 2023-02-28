@@ -9,22 +9,23 @@ import java.util.stream.Collectors;
 
 public class Park {
     db animals = new db();
-    HashMap<String, List<Animal>> visitors = new HashMap<>();
+    HashMap<String, Owner> visitors = new HashMap<>();
 
-    static boolean isPalindrome(String _str) {
-        String str = _str.toLowerCase();
-
-        int left = 0;
-        int right = str.length() - 1;
-
-        while(left < right) {
-            if(str.charAt(left) != str.charAt(right)) {
-                return false;
-            }
-            left++;
-            right--;
+    void register(Animal a){
+        if(!visitors.containsKey(a.Owner)){
+            Owner owner = new Owner();
+            owner.Name = a.Owner;
+            visitors.put(a.Owner, owner);
         }
-        return true;
+
+        Owner visitor = visitors.get(a.Owner);
+        visitor.pets.add(a);
+    }
+
+    Park(){
+        for(Animal animal : animals.query()){
+            this.register(animal);
+        }
     }
 
     /*
@@ -34,9 +35,11 @@ public class Park {
     public List<Animal> palindromes(){
         return animals.query()
                 .stream()
-                .filter(i -> isPalindrome(i.AnimalName))
+                .filter(i -> Animal.isPalindrome(i.AnimalName))
                 .collect(Collectors.toList());
     }
+
+
 
     public HashMap<String, List<Animal>> groupByOwner(){
         HashMap<String, List<Animal>> m = new HashMap<>();
